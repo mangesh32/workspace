@@ -1,0 +1,27 @@
+package com.psl.client;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class UserInterface {
+
+	public static void main(String[] args)  {
+		// TODO Auto-generated method stub
+		Car car=new Car();
+		car.setMake("Audi");
+		car.setModel("R8 Spyder");
+		car.setColor("Black");
+		car.setEngine(new Engine(125,1000,FuelType.DIESEL));
+	
+		try(ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream("car.ser"))){
+			
+			
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
+}

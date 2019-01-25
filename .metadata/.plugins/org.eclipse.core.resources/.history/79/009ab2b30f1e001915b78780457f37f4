@@ -1,0 +1,19 @@
+package com.psl.main;
+
+class X { }
+class Y extends X { }
+class Z extends Y { }
+
+class GenericClass<T> {
+	public void add(T val) { }
+	public T get() { return null;}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

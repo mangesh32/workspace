@@ -1,0 +1,33 @@
+package day_4;
+
+import java.util.HashSet;
+
+
+class Anime extends Thread{
+	String seq;
+	public Anime(String seq){
+		this.seq=seq;
+	}
+	
+	@Override
+	public void run() {
+		System.err.println(seq);
+	}
+	
+}
+
+
+
+public class Animation {
+
+	public static void main(String[] args) {
+		String[] str=new String[]{"-_-","+_+","^_^","*_*"};
+		while(true){
+			Anime a=new Anime()
+		}
+		
+		
+		
+	}
+
+}

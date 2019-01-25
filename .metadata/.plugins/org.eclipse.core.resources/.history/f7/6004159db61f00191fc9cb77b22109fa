@@ -1,0 +1,45 @@
+package Nugget_8;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.Date;
+
+public class JDBC_MAIN {
+
+	public static void main(String[] args) {
+		DBops.setUpTable();
+		
+		
+		insert10();
+			
+		DBops.displayTop5();
+		
+		
+	}
+	
+	public static void insert10(){
+		try(BufferedReader br=new BufferedReader(new FileReader("emp.txt"))){
+			while(br.ready()){
+				String[] arr=br.readLine().split(" ");
+				Employee e=new Employee();
+				e.setEno(Integer.parseInt(arr[0]));
+				e.seteName(arr[1]);
+				e.setJob(arr[2]);
+				e.setMgr(Integer.parseInt(arr[3]));
+				e.setHireDate(Date.valueOf(arr[4]));
+				e.setSal(Double.parseDouble(arr[5]));
+				e.setComm(Double.parseDouble(arr[6]));
+				e.setDeptno(Integer.parseInt(arr[7]));
+				DBops.insert(e);		
+			}
+						
+		} catch (FileNotFoundException e1) {
+			System.out.println(e1.getMessage());
+		} catch (IOException e1) {
+			System.out.println(e1.getMessage());
+		}
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.persistent.app;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Nugget_7_2 {
+
+	public static void main(String[] args){
+		Scanner in=new Scanner(System.in);
+		String input=in.next();
+		
+		try(FileWriter fw=new FileWriter("io.txt")){
+			
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
+		}
+		
+		
+
+	}
+
+}

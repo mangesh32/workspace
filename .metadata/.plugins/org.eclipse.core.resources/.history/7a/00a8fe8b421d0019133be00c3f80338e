@@ -1,0 +1,15 @@
+package com.psl.client;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class Client {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		File file=new File("H:/users/mangesh_ghodki/Desktop/words.txt");
+		FileInputStream fi=new FileInputStream(file);
+		
+	}
+
+}

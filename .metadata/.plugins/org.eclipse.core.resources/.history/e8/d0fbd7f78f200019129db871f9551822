@@ -1,0 +1,10 @@
+package com.psl.util;
+
+public class InterThreadCommunication {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

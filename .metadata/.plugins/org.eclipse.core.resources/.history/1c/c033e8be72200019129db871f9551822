@@ -1,0 +1,19 @@
+package com.psl.util;
+
+public class SharedResource {
+	private long cycle;
+	public SharedResource(int cycle){
+		this.cycle=cycle;
+	}
+	
+	
+	public void startCycle(){
+		while(--cycle>0);
+	}
+	
+	public long readCurrentValue(){
+		return cycle;
+	}
+	
+	
+}

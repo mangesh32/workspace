@@ -1,0 +1,63 @@
+package day_3;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import static day_1.ControlFlow.isLeap;
+
+public class CalanderSpan {
+
+	@SuppressWarnings({ "deprecation", "static-access" })
+	public static void main(String[] args) throws ParseException {
+		int curYear=2000;
+		Calendar c=Calendar.getInstance();
+		Calendar temp=Calendar.getInstance();
+		SimpleDateFormat sdf=new SimpleDateFormat("D/M/yyyy");	
+		
+		
+		boolean c_leap=isLeap(curYear);
+		Date d=new Date();			
+		d=sdf.parse("1/1/"+curYear);
+		
+		
+		c.setTime(d);
+		
+		System.out.println(curYear+" DAY : "+c.get(Calendar.DAY_OF_WEEK));
+		for(int i=curYear+1;i<=curYear+100;i++){
+			if(isLeap(i)==c_leap){
+//				System.out.println(i+" leap:"+isLeap(i));
+				Date t=new Date();			
+				t=sdf.parse("1/1/"+i);
+				temp.setTime(t);
+					
+				
+				if(c.get(Calendar.DAY_OF_WEEK)==temp.get(Calendar.DAY_OF_WEEK)){
+					System.out.println(i+" DAY : "+getDay(temp.get(Calendar.DAY_OF_WEEK)));
+					System.out.println("SPAN :"+(i-curYear));
+					break;
+				}
+				
+			}
+		}
+		
+		
+		
+		
+	}
+	public static String getDay(int i){
+		switch(i){
+		
+		case 1:return "Monday";
+		case 2:return "Tuesday";
+		case 3:return "Wednusday";
+		case 4:return "Thursday";
+		case 5:return "Friday";
+		case 6:return "Saturday";
+		case 7:return "Sunday";
+		default: return null;
+		}
+	}
+
+}

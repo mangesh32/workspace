@@ -1,0 +1,20 @@
+package Nugget_4;
+
+import java.util.Scanner;
+
+public class Assign_4 {
+	Map<String,Integer> map=new HashMap<String,Integer>();
+
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		String string;
+		while((string=in.next())!="exit")
+			System.out.println(process(string));
+		
+	}
+	
+	
+	
+	
+
+}

@@ -1,0 +1,10 @@
+package day_2;
+
+public class TwoDimentionalShape extends Shape {
+
+
+	abstract public void calculateArea();
+	
+	abstract public void calculatePerimeter();
+
+}

@@ -1,0 +1,24 @@
+package day_4;
+
+import java.util.Scanner;
+
+public class MAIN {
+	static Scanner in;
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		in=new Scanner(System.in);
+		do{
+			WordDropper wd=new WordDropper();
+			WordInput wi=new WordInput();
+			wd.run();
+			wi.run();
+			
+			
+			
+			
+		}while(in.next()!="*");
+		
+	}
+
+}

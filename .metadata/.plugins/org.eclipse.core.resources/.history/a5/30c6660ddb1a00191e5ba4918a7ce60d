@@ -1,0 +1,26 @@
+package day_2;
+
+public class Sphere extends ThreeDimentionalShape {
+	private double radius;
+	
+	
+
+	
+
+	public Sphere( double radius) {
+		super("Sphere");
+		this.radius = radius;
+	}
+
+	@Override
+	public void calculateVolume() {
+		setVolume((4/3)*Math.PI*Math.pow(radius, 3));
+	}
+
+	@Override
+	public void calculateSurfaceArea() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

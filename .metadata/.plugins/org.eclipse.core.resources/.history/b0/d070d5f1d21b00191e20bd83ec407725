@@ -1,0 +1,28 @@
+package nugget_9_3;
+
+public class Name {
+	private String frstName,surname;
+
+	public Name(String frstName, String surname) {
+		super();
+		this.frstName = frstName;
+		this.surname = surname;
+	}
+
+	public String getFrstName() {
+		return frstName;
+	}
+
+	public void setFrstName(String frstName) {
+		this.frstName = frstName;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+	
+}

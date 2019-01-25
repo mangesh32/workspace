@@ -1,0 +1,10 @@
+package day_4;
+
+public class Word {
+	String generatedWord;
+	String typedWord;
+	int generatedWordCount;
+	int hitCount;
+	
+	
+}

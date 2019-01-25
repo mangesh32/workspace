@@ -1,0 +1,28 @@
+package com.psl.util;
+
+public class AccessCommonResource extends Thread {
+	
+	private CommonResource commonResource;
+
+	public AccessCommonResource(CommonResource commonResource) {
+		this.commonResource = commonResource;
+	}
+	
+	@Override
+	public void run() {
+		try {
+			commonResource.getLock();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		
+		for(int i=0;i<commonResource.getSize();i++)
+			System.out.println(commonResource.getNumber(i));
+		
+		
+		commonResource.releaseLock();
+	}
+	
+
+}

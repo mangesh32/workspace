@@ -1,0 +1,34 @@
+package com.psl.client;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class Client {
+
+	public static void main(String[] args) throws IOException {
+		File inputFile=new File("C:/Users/Public/Pictures/Sample Pictures/Koala.jpg");
+		File outputFile=new File("New-Koala.jpg");
+		
+	
+		try(FileInputStream fi=new FileInputStream(inputFile);
+			FileOutputStream fo=new FileOutputStream(outputFile)){
+				
+			int i;
+			while((i= fi.read())!=-1){
+				fo.write(i);
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
+
+		Runtime.getRuntime().exec(outputFile.getAbsolutePath());
+	}
+
+}

@@ -1,0 +1,20 @@
+package com.psl.util;
+
+public class BankAccount {
+	private String accountNo;
+	private double ammount;
+	
+	public BankAccount(String accountNo, double ammount) {
+		super();
+		this.accountNo = accountNo;
+		this.ammount = ammount;
+	}
+
+	@Override
+	public String toString() {
+		return "BankAccount [accountNo=" + accountNo + ", ammount=" + ammount
+				+ "]";
+	}
+	
+	
+}

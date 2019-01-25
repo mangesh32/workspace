@@ -1,0 +1,17 @@
+package Nugget_8;
+
+public class JDBC_MAIN {
+
+	public static void main(String[] args) {
+		DBops.setUpTable();
+		DBops.displayTop5();
+		
+		for(int i=0;i<10;i++){
+			Employee e=new Employee();
+			DBops.insert(e);
+		}
+		
+		
+	}
+
+}

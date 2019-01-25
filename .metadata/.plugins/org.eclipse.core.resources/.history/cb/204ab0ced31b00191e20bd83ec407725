@@ -1,0 +1,29 @@
+package nugget_9_3;
+
+import java.util.Vector;
+
+public class Main {
+	
+	static Vector<Name> vector=new Vector<Name>();
+	
+	public static void main(String[] args) {
+		
+		showUI();
+		
+
+	}
+	
+	static void showUI(){
+		System.out.println("-----------------------------------------------------------");
+		System.out.println(String.format("%10s"," ")+"1. accept first name and surname"));
+		System.out.println(String.format("%10s"," ")+"2. display complete name."));
+		System.out.println(String.format("%10s"," ")+"3. exit"));
+		System.out.println("-----------------------------------------------------------");
+	}
+
+	static void displayNames(){
+		for(Name name: vector){
+			System.out.println(name.getFirstName()+" "+name.getSurname());
+		}
+	}
+}

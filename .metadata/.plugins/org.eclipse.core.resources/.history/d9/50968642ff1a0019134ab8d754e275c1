@@ -1,0 +1,23 @@
+package com.psl.main;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		// All Exceptions excluding runtimeExceptions comes under #Checked Exception.
+		// Other belongs to # Unchecked Exceptions.
+		
+		try{
+			
+		}catch(Exception e){
+			
+		}finally{
+			
+		}
+
+	}
+	public static void searchProduct(String productCode){
+		throw new ProductNotFoundException("Not Found");
+	}
+
+}

@@ -1,0 +1,13 @@
+package day_4;
+
+import java.util.Random;
+
+public class WordDropper extends Thread{
+	@Override
+	public void run() {
+		Random r=new Random();
+		Word.generatedWord=Dictionary.valueOf("1")
+		
+	}
+
+}

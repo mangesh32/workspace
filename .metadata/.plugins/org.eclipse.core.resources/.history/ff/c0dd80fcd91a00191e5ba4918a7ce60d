@@ -1,0 +1,14 @@
+package day_2;
+
+public abstract class TwoDimentionalShape extends Shape {
+
+
+	public TwoDimentionalShape(String name) {
+		super(name);
+	}
+
+	abstract public void calculateArea();
+	
+	abstract public void calculatePerimeter();
+
+}

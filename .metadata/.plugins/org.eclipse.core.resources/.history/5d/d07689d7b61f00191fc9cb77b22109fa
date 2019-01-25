@@ -1,0 +1,22 @@
+package Nugget_8;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.Date;
+
+public class JDBC_MAIN {
+
+	public static void main(String[] args) {
+		DBops.setUpTable();		
+		
+		DBops.insert10();
+			
+		DBops.displayTop5();
+		
+		
+	}
+	
+
+}

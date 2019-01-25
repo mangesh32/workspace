@@ -1,0 +1,8 @@
+package com.psl.util;
+
+public class CommonResource {
+	private int[] numbers;
+	private boolean available;
+	private Random random;
+	
+}

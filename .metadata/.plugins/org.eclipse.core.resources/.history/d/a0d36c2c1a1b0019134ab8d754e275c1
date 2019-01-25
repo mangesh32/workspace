@@ -1,0 +1,22 @@
+package bkp;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Nugget_7 {
+
+	public static void main(String[] args) throws IOException {
+		FileReader fr=new FileReader(args[0]);
+		FileWriter fw= new FileWriter(args[1]);
+		char ch;
+		while(fr.ready()){
+			fw.append((char) fr.read());
+		}
+		fr.close();
+		fw.close();
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.psl.client;
+
+public class UserInterface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Car car=new Car();
+		car.setMake("Audi");
+		car.setModel("R8 Spyder");
+		car.setColor("Black");
+		car.setEngine(new Engine(125,1000,FuelType.DIESEL));
+	}
+
+}

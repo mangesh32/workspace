@@ -1,0 +1,12 @@
+package day_4;
+
+public enum Dictionary {
+	EXPERIENCE,
+	IMPORTANT,
+	ACTIVITIES;
+
+	public static String valueOf(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

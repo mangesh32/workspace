@@ -1,0 +1,11 @@
+package com.psl.util;
+
+public class InterThreadCommunication {
+
+	public static void main(String[] args) {
+		CommonResource commonResource;
+		commonResource=new CommonResource();
+		
+	}
+
+}
