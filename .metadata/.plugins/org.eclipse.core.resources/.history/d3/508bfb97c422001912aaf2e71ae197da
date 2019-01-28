@@ -1,0 +1,6 @@
+package com.psl.test;
+
+public @interface TestThis {
+	public String name();
+
+}

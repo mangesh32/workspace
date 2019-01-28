@@ -1,0 +1,34 @@
+package com.psl.main;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
+public class Client {
+
+	public static void main(String[] args) {
+
+
+		BankAccount account=new BankAccount("Warren Buffet","34235",2356.53);
+		Class<?> cls = account.getClass();
+		for(Field f : cls.getDeclaredFields()){
+			System.out.println(f.getType());
+			System.out.println(f.getName());
+		}
+		
+		System.out.println("===========================================");
+		
+		for(Method m : cls.getDeclaredMethods()){
+			System.out.println(m.getName()+" ReturnType "+m.getReturnType()+" ");
+			
+			if(m.getName().contains("get")){
+				m.invoke(account, )
+				
+			}
+			
+		}
+		
+		
+
+	}
+
+}

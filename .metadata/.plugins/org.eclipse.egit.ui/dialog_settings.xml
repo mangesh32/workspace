@@ -2,8 +2,8 @@
 <section name="Workbench">
 	<item value="true" key="CommitDialog.showUntracked"/>
 	<list key="RepositorySelectionPage.UsedUris">
-		<item value="https://github.com/mangesh32/Collections"/>
 		<item value="https://github.com/mangesh32/TrainingP"/>
+		<item value="https://github.com/mangesh32/Collections"/>
 	</list>
 	<list key="CommitDialog.authorValues">
 		<item value="mangesh_ghodki &lt;mangeshghodki32@yahoo.com&gt;"/>

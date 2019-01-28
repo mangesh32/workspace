@@ -1,0 +1,13 @@
+package com.psl.main;
+
+public class Client {
+
+	public static void main(String[] args) {
+
+
+		BankAccount account=new BankAccount("Warren Buffet","34235",2356.53);
+		Class<?> c=account.getClass();
+
+	}
+
+}

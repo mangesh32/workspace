@@ -1,0 +1,21 @@
+package Nugget_3;
+
+public class Assign_4 {
+
+	public static void main(String[] args) {
+
+		
+		Assign_4 obj=new Assign_4();
+		System.out.println(onj.countWords("src"));
+
+	}
+
+	public int countWords(String string) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+
+}

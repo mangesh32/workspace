@@ -1,0 +1,10 @@
+package day_5;
+
+public class PartialFileSearch {
+
+	public static void main(String[] args) {
+		String path,fileName;
+		System.out.println("Enter Path");
+	}
+
+}

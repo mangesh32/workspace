@@ -1,0 +1,20 @@
+package day_5;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class CalendarOps {
+
+	public static void main(String[] args) {
+
+			String str = "data";
+			StringBuffer br = new StringBuffer(str);
+			
+			System.out.println(br.reverse().toString());
+		
+
+		
+
+	}
+
+}

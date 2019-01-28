@@ -1,0 +1,7 @@
+package com.psl.test;
+
+public class ParameterizedTest {
+	private int number;
+	private long expectedResult,actualResult;
+
+}

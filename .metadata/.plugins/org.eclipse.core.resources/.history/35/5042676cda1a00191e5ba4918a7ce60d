@@ -1,6 +1,0 @@
-package day_2;
-
-public class ThreeDimentionalShape extends Shape {
-	private double volume,surfaceArea;
-
-}
