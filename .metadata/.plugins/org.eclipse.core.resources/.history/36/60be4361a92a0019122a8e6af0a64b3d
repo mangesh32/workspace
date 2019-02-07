@@ -1,0 +1,9 @@
+package com.tienda.bean;
+
+public class ExceptionMessage {
+
+	public ExceptionMessage(String format) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

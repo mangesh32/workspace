@@ -1,5 +1,0 @@
-package nugget_9_3;
-
-public class Name {
-	private String frstName,surname;
-}

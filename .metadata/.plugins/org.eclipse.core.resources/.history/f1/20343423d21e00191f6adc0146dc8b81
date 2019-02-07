@@ -1,7 +1,0 @@
-package com.psl.util;
-
-import java.util.Comparator;
-
-public class BankAccountFullNameComparator implements Comparator<BankAccount> {
-
-}

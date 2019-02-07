@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<link rel="stylesheet" src="bootstrap.css">
+<script type="text/javascript" src="bootstrap.js"></script>
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+
+
+<script src="custom.js"></script>
+</body>
+</html>

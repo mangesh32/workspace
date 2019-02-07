@@ -1,0 +1,20 @@
+package com.tienda.resources;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+
+import com.tienda.bean.User;
+import com.tienda.service.TiendaService;
+import com.tienda.util.UserNotFoundException;
+
+@Path("/users")
+public class UserResource { //resource class
+
+	@GET
+	@Produces(value={}) //MIME/Media type
+	public User fetchUserDetails(String username) throws UserNotFoundException{ //resource method
+		return new TiendaService().getUserDetails(username);		
+	}
+		
+}

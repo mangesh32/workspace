@@ -1,0 +1,14 @@
+package com.tienda.resources;
+
+import javax.ws.rs.Path;
+
+import com.tienda.bean.User;
+import com.tienda.service.TiendaService;
+
+@Path("/users")
+public class UserResource { //resource class
+	public User fetchUserDetails(String username){ //resource method
+		return new TiendaService().getUserDetails(username);
+		
+	}
+}

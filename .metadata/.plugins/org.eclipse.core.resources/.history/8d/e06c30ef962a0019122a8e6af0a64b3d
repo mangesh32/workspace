@@ -1,0 +1,18 @@
+package bkp;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class PnC {
+	
+	public void show(){
+		
+	}
+}
+class test extends PnC{
+	public void show() throws IOException{
+		
+	}
+}

@@ -1,0 +1,45 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
+
+public class MAIN {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br=new BufferedReader(new FileReader("sample.txt"));
+		String line;
+		List<String> lines=new ArrayList<String>();
+		while((line=br.readLine()) != null)
+			lines.add(line);
+		
+		List<Employee> list=new ArrayList<Employee>();
+		
+		for(String data:lines){
+			Employee employee=new Employee();
+			String temp="";
+			int identifier=0;
+			boolean inside=false;
+			Stack<Character> stack=new Stack<Character>();
+			char[] charArr=data.toCharArray();
+			for(int i=0;i<charArr.length;i++){
+				char c=charArr[i];
+				if(inside)temp+=c;
+				if(c=='"' && stack.size()%2!=0){
+					stack.push(c);					
+				}
+				if(c=='"' && stack.size()%2==0 && (i==charArr.length-1)){
+					stack.pop();					
+				}
+			}
+			
+			
+		}
+		
+
+	}
+
+}

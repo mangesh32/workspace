@@ -1,0 +1,9 @@
+package com.tienda.service;
+
+public class TiendaService {
+	
+	public User getUserDetails(String username){
+		return new DataStore().getUser(username);
+	}
+
+}

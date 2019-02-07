@@ -17,7 +17,7 @@ public class UpdateSharedResource extends Thread {
 	@Override
 	public void run() {
 		synchronized (sharedResource) {
-
+			//TODO ye method meko likhni hai.
 			sharedResource.startCycle();
 			Thread.yield();
 		}

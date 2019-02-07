@@ -1,9 +1,0 @@
-package com.psl.test;
-
-import org.junit.runners.Suite.SuiteClasses;
-
-
-@SuiteClasses(value={UtilityTest.class,ParameterizedTest.class})
-public class UtilityTestSuite {
-
-}

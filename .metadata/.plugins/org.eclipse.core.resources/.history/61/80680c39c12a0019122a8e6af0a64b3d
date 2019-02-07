@@ -1,0 +1,8 @@
+package com.tienda.resources;
+
+import javax.ws.rs.Path;
+
+@Path("orders")
+public class UserOrdersResource {
+
+}

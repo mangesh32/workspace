@@ -1,0 +1,12 @@
+package bkp;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class PnC {
+	
+	public void show(){
+		
+	}
+}
