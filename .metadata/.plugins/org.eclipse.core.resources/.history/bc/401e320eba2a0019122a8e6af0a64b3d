@@ -1,6 +1,0 @@
-package com.tienda.resources;
-
-@path("/users")
-public class UserResource { //resource class
-
-}

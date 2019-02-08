@@ -175,4 +175,32 @@ public class DataStore {
 		}
 		throw new WishlistNotFoundException(new ExceptionMessage(String.format("No wishlist yet for '%s'", username)));
 	}
+	
+	public void createUser(User user){
+		users.add(user);
+	}
+
+	public void updateUser(User user) {
+		
+		for(User u:users){
+			if(u.equals(user))
+			{
+				u.setEmail(user.getEmail());
+				u.setUsername(user.getUsername());
+			}
+		}
+		
+	}
+	public List<User> getAllUsers(){
+		return users;
+	}
+	public List<Order> getAllOrders(){
+		return orders;
+	}
+	
+
+	public void createOrder(Order order) {
+		orders.add(order);		
+	}
+	
 }

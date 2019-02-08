@@ -1,5 +1,8 @@
 package com.tienda.bean;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="product")
 public class Product {
 	private int productId;
 	private String code,name,description;

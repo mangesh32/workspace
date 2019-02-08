@@ -1,5 +1,8 @@
 package com.tienda.bean;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="exception-msg")
 public class ExceptionMessage {
 	private String message;
 	

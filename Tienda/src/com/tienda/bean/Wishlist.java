@@ -2,6 +2,9 @@ package com.tienda.bean;
 
 import java.util.Set;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="wishlist")
 public class Wishlist {
 	private int wishlistId;
 	private User wishedBy;

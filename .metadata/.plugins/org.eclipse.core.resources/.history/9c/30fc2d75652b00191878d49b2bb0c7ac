@@ -1,0 +1,42 @@
+package com.tienda.resources;
+
+import java.util.Set;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.MediaType;
+
+import com.tienda.bean.Order;
+import com.tienda.bean.User;
+import com.tienda.service.TiendaService;
+import com.tienda.util.DataStore;
+import com.tienda.util.OrderNotFoundException;
+import com.tienda.util.UserNotFoundException;
+
+@Path("/orders")
+public class OrdersResource {
+	
+	@GET
+	@Produces(value={MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML}) //MIME/Media type
+	public Order fetchOrderDetailsForUser(@PathParam("uname") String username,@PathParam("number") String number) throws OrderNotFoundException{ //resource method
+		return new TiendaService().getOrderDetailsForUser(username, number);
+	}
+
+	@GET
+	@Produces(value={MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML}) //MIME/Media type
+	public Set<Order> fetchAllOrderForUser(@PathParam("uname") String username){ //resource method
+		return new TiendaService().getAllOrdersForUser(username);
+	}
+
+	@POST
+	@Consumes(value={MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	public void createOrder(Order order){
+		new TiendaService().createOrder(order);
+		System.out.println("Order Created"+order.toString());
+		System.out.println(new DataStore().getAllOrders());
+	}
+}

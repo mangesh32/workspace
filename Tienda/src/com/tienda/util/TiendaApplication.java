@@ -6,7 +6,6 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-import com.tienda.resources.UserOrdersResource;
 import com.tienda.resources.UserResource;
 
 @ApplicationPath("/")
@@ -15,7 +14,8 @@ public class TiendaApplication extends Application{
 	public Set<Class<?>> getClasses() {
 		Set<Class<?>> classes=new HashSet<Class<?>>();
 		classes.add(UserResource.class);
-		classes.add(UserOrdersResource.class);
+//		classes.add(OrdersResource.class);
+		classes.add(TiendaExceptionMapper.class);
 		return classes;
 	}
 

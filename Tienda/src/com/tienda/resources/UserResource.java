@@ -1,35 +1,100 @@
 package com.tienda.resources;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.HashSet;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.container.ResourceContext;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
+import javax.ws.rs.core.UriInfo;
 
+import com.tienda.bean.ExceptionMessage;
+import com.tienda.bean.Link;
 import com.tienda.bean.User;
+import com.tienda.bean.Wishlist;
 import com.tienda.service.TiendaService;
+import com.tienda.util.DataStore;
 import com.tienda.util.UserNotFoundException;
 
 @Path("/users")
-public class UserResource { //resource class
+public class UserResource { //root resource class
+	
+	@Context
+	private ResourceContext resourceContext; // dependency injection
+	@Context
+	private UriInfo uriInfo;
 
 	@GET
 	@Produces(value={MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML}) //MIME/Media type
 	@Path("{uname}") //template parameter
-	public User fetchUserDetails(@PathParam("uname") String username) throws UserNotFoundException{ //resource method
-		return new TiendaService().getUserDetails(username);		
+	public Response fetchUserDetails(@PathParam("uname") String username) throws UserNotFoundException{ //resource method
+		
+		User user=new TiendaService().getUserDetails(username);
+		user.setLinks(new HashSet<Link>());
+				
+		UriBuilder baseBuilder=uriInfo.getBaseUriBuilder();
+		baseBuilder.path(UserResource.class);
+		baseBuilder.path(UserResource.class, "getSubResource")
+				.resolveTemplate("uname", username);
+		user.getLinks().add(new Link(UriBuilder.fromPath(baseBuilder.toTemplate())
+												.resolveTemplate("sub-resource-name", "orders")
+												.build()
+												.toString(),
+									 String.format("%s,%s",MediaType.APPLICATION_JSON,
+											 			   MediaType.APPLICATION_XML),
+									"orders"));
+		user.getLinks().add(new Link(UriBuilder.fromPath(baseBuilder.toTemplate())
+												.resolveTemplate("sub-resource-name", "wishlist")
+												.build()
+												.toString(),
+									 String.format("%s,%s",MediaType.APPLICATION_JSON,
+											 			   MediaType.APPLICATION_XML),
+									"wishlist"));
+		
+		return Response.ok(user).build();
 	}
 	
 	@POST
 	@Consumes(value={MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
-	public void createUser(User user){
-		System.out.println(user.getEmail());
-		System.out.println(user.getUsername());
+	public Response createUser(User user) throws URISyntaxException{
+		new TiendaService().createUser(user);
+		UriBuilder ub=uriInfo.getBaseUriBuilder();
+		ub.path(UserResource.class);
+		ub.path(user.getUsername());	
+		System.out.println("Created: "+ub.build().toString());
+		return Response.created(ub.build()).build();
 		
 	}
 	
+	@PUT
+	@Consumes(value={MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	public void updateUser(User user){
+		System.out.println("User Updated: "+user.getUsername());
+		new TiendaService().updateUser(user);
+		System.out.println(new DataStore().getAllUsers());
+	}
+	@Path("{uname}/{sub-resource-name}")
+	public Object getSubResource(@PathParam("sub-resource-name") String subResourceName){//sub-resource locator
+		//TODO Pay Attention to this...
+		switch(subResourceName){
+		case "orders":return resourceContext.getResource(OrdersResource.class);		
+		case "wishlist":return resourceContext.getResource(Wishlist.class);
+		default: throw new WebApplicationException(Response.status(Response.Status.BAD_REQUEST)
+														.entity(new ExceptionMessage("No matching resource found!"))
+														.build());
+		}		
+		
+	}
 		
 }

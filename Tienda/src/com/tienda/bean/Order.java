@@ -3,8 +3,11 @@ package com.tienda.bean;
 import java.util.Date;
 import java.util.Set;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.tienda.util.OrderStatus;
 
+@XmlRootElement(name="order")
 public class Order {
 	private int orderId;
 	private String number;

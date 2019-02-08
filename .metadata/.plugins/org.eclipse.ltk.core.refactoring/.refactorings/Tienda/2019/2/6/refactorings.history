@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.tienda.resources.UserOrdersResource&apos; to &apos;OrdersResource&apos;&#x0D;&#x0A;- Original project: &apos;Tienda&apos;&#x0D;&#x0A;- Original element: &apos;com.tienda.resources.UserOrdersResource&apos;&#x0D;&#x0A;- Renamed element: &apos;com.tienda.resources.OrdersResource&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;UserOrdersResource&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.tienda.resources{UserOrdersResource.java[UserOrdersResource" matchStrategy="1" name="OrdersResource" qualified="false" references="true" similarDeclarations="false" stamp="1549603896051" textual="false" version="1.0"/>
+</session>

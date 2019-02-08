@@ -1,0 +1,58 @@
+package com.tienda.bean;
+
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="link")
+public class Link {
+	private String href,type,rel;
+
+	@XmlAttribute
+	public String getHref() {
+		return href;
+	}
+
+	public void setHref(String href) {
+		this.href = href;
+	}
+	
+	@XmlAttribute
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Link [href=" + href + ", type=" + type + ", rel=" + rel + "]";
+	}
+
+	@XmlAttribute
+	public String getRel() {
+		return rel;
+	}
+
+	public void setRel(String rel) {
+		this.rel = rel;
+	}
+
+	
+
+	public Link(String href, String type, String rel) {
+		super();
+		this.href = href;
+		this.type = type;
+		this.rel = rel;
+	}
+
+	public Link() {
+		super();
+	}
+	
+	
+	
+}

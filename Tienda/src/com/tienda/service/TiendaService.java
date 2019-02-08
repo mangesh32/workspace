@@ -34,6 +34,20 @@ public class TiendaService {
 		return new DataStore().getWishlistForUser(username);
 	}
 	
+	public void createUser(User user){
+		new DataStore().createUser(user);
+	}
+
+	public void updateUser(User user) {
+		new DataStore().updateUser(user);
+		
+	}
+
+	public void createOrder(Order order) {
+		new DataStore().createOrder(order);
+		
+	}
+	
 	
 
 }
